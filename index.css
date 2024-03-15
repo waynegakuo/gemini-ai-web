@@ -47,6 +47,13 @@ body {
   background: var(--icon-color);
   border-radius: 25px;
 }
+
+.header-text {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
 .default-text {
   display: flex;
   align-items: center;
