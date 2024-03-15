@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini AI for Web</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<main>
+    <dialog id="response-dialog">
+        <div id="message"></div>
+        <form method="dialog">
+            <button>OK</button>
+        </form>
+    </dialog>
+
+    <div style="display: flex; justify-content: center; align-items: center">
+        <textarea id="gemini-prompt"  placeholder="Type in a prompt...">
+        </textarea>
+    </div>
+
+    <button id="open">Generate</button>
+    <input type="file" id="file">
+
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+            <h1>Gemini Response</h1>
+            <p id="gemini-response"></p>
+            <button id="close">Close Me</button>
+        </div>
+    </div>
+</main>
+</body>
+
+<script type="module" src="index.js"></script>
+
+</html>
