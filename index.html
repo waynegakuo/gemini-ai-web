@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemini AI for Web</title>
-    <link rel="stylesheet" href="index.css" />
+    <meta charset="utf-8">
+    <title>Multi-turn conversation</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script type="module" src="index.js" defer></script>
   </head>
-
-  <body>
-    <main> 
-      <div>
-        <hi>Gemini Web Demo</h1>
-        <textarea id="gemini-prompt" placeholder="Type in a prompt..."></textarea>
-        <button id="open">Generate</button> 
-        <input multiple class="file" type="file" id="file" />
-      </div>
-      <div class="modal-container" id="modal_container">
-        <div class="modal">
-          <h1>Gemini Response</h1>
-          <p id="gemini-response"></p>
-          <button id="close">Close Me</button>
+  <body class="light-mode">
+    <!-- Chats container -->
+    <div class="chat-container"></div>
+    
+    <!-- Typing container -->
+    <div class="typing-container">
+      <div class="typing-content">
+        <div class="typing-textarea">
+          <textarea id="chat-input" spellcheck="false" placeholder="Enter a prompt here" required></textarea>
+          <span id="send-btn" class="material-symbols-rounded">send</span>
         </div>
+        <div class="typing-controls">
+          <!-- <span id="theme-btn" class="material-symbols-rounded">light_mode</span> -->
+          <span id="delete-btn" class="material-symbols-rounded">delete</span>
       </div>
-    </main>
-    <dialog id="response-dialog">
-       <div id="images" class="images"></div>
-      <div id="message"></div>
-      <form class="dialog-form" method="dialog">
-        <button>OK</button>
-      </form>
-    </dialog>
-  </body>
+    </div>
 
-  <script type="module" src="index.js"></script>
+  </body>
 </html>
