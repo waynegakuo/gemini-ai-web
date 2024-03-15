@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
 // Fetch your API Key : > config
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "AIzaSyAKtyGNv9QPAUGce05o8tkbOMCiyouDrcE";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // Get elements from the DOM
@@ -12,6 +12,7 @@ const respDialog = document.querySelector("dialog");
 const message = document.getElementById("message");
 const filePicker = document.getElementById("file");
 const afterPromptResponse = document.getElementById("gemini-response");
+const images = document.getElementById("images");
 
 // Ask gemini anything using text - text-only input
 open.addEventListener("click", async () => {
@@ -73,6 +74,20 @@ filePicker.addEventListener("change", async (event) => {
       const text = response.text();
 
       message.innerText = text;
+
+      const fileList = [...fileInputEl.files]
+
+      fileList.forEach(file => {
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const el = document.createElement('img')
+            el.src = e.target.result
+            images.appendChild(el)
+          };
+          reader.readAsDataURL(file);
+        }
+      })
     };
     await askGemini();
     respDialog.show();

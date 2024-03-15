@@ -13,7 +13,7 @@
         <hi>Gemini Web Demo</h1>
         <textarea id="gemini-prompt" placeholder="Type in a prompt..."></textarea>
         <button id="open">Generate</button> 
-        <input class="file" type="file" id="file" />
+        <input multiple class="file" type="file" id="file" />
       </div>
       <div class="modal-container" id="modal_container">
         <div class="modal">
@@ -24,8 +24,9 @@
       </div>
     </main>
     <dialog id="response-dialog">
+       <div id="images" class="images"></div>
       <div id="message"></div>
-      <form method="dialog">
+      <form class="dialog-form" method="dialog">
         <button>OK</button>
       </form>
     </dialog>
