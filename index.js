@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
 
 // Fetch your API Key : > config
-const API_KEY = "AIzaSyAKtyGNv9QPAUGce05o8tkbOMCiyouDrcE";
+const API_KEY = "KEY";
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 // Get elements from the DOM
